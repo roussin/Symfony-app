@@ -1,7 +1,6 @@
-<div>{{title | upper}}</div>
-{# Commentaire #}
-<ul>
-    {% for item in array %}
-        <li>{{ item }}</li>
-    {% endfor %}
-</ul>
+<!-- Utilisation de la fonction path() de twig prend en 1er argument le nom de la route et en deuxième d'autres paramètres -->
+<a href="{{ path('helloName', {'name' : 'Christophe'}) }}">Hello Christophe</a>
+<a href="{{ path('helloName', {'name' : 'Christelle'}) }}">Hello Christelle</a>
+<a href="{{ path('helloName', {'name' : 'Yoann'}) }}">Hello Yoann</a>
+<a href="{{ path('helloName', {'name' : 'Mickaël'}) }}">Hello Mickaël</a>
+<a href="{{ path('helloName', {'name' : 'Clément'}) }}">Hello Clément</a>
