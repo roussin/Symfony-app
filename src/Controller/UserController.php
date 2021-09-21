@@ -25,7 +25,15 @@ class UserController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) 
         {
-            /* var_dump($user); */
+            // getData() récupère les valeurs qui se trouvent dans le formulaire
+            $userInfo = $form->getData();
+            // Récupérer l'entityManager de doctrine via AbstractController
+            $entityManager = $this->getDoctrine()->getManager();
+            // préparartion de la transaction
+            // persister un objet en répurérant les données du formulaire soumis et validé
+            $entityManager->persist($userInfo);
+            // exécution de la transaction
+            $entityManager->flush();
             return new Response("Formulaire validé");
         }
 
